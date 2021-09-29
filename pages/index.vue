@@ -304,7 +304,7 @@ export default Vue.extend({
 		const canvasWidth = (document.querySelector("#avatar") as HTMLCanvasElement).clientWidth;
 
 		renderer.setPixelRatio(window.devicePixelRatio);
-		renderer.setSize(canvasWidth, canvasWidth);
+		renderer.setSize(canvasWidth, canvasWidth, false);
 
 		const gltf = await new GLTFLoader().loadAsync("/sasial.glb");
 
@@ -341,7 +341,23 @@ export default Vue.extend({
 
 		function animate() {
 			requestAnimationFrame(animate);
-			controls.update(); // update camera
+
+			// update camera
+			controls.update();
+
+			if (window.innerWidth > 768) {
+				// same as tailwind's md breakpoint
+				camera.aspect = 1;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize(500, 500, false);
+			} else {
+				camera.aspect = renderer.domElement.clientWidth / renderer.domElement.clientHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize(renderer.domElement.clientWidth, renderer.domElement.clientHeight, false);
+			}
+
+			// render
 			renderer.render(scene, camera);
 		}
 		animate();
