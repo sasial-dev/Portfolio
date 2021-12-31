@@ -170,9 +170,11 @@
 					<h2 class="text-5xl font-bold">Contact Me</h2>
 					<p class="text-2xl mt-5">
 						I am currently
-						<span class="text-green-300 font-bold"> open for comissions</span>
-						<!-- <span class="text-red-500 font-bold"> unable to handle any more comissions</span> -->
-						. My timezone is GMT+10, so you may get replies from me at strange times. While I endavour to
+						<span v-show="presence.kv.commissions === 'true'" class="text-green-300 font-bold">
+							open for comissions</span
+						><span v-show="presence.kv.commissions === 'false'" class="text-red-500 font-bold">
+							unable to handle any more comissions</span
+						>. My timezone is GMT+10, so you may get replies from me at strange times. While I endavour to
 						reply as soon as possible, it is helpful if you can tell me your timezone so I can reply when
 						we're both online.
 					</p>
