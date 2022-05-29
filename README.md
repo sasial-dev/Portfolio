@@ -1,14 +1,36 @@
-# Sasial's Portfolio
-This is a website showcasing my projects and coding experience I've done, using Nuxt.js, Vue & Tailwind.
+## Setup
 
-## Local Serving/Development
+Make sure to install the dependencies:
 
 ```bash
-# install dependencies
-$ yarn 
+# yarn
+yarn install
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+# npm
+npm install
+
+# pnpm
+pnpm install --shamefully-hoist
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+## Development Server
+
+Start the development server on http://localhost:3000
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
