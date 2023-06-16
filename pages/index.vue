@@ -202,7 +202,7 @@
                 Discord
               </h3>
               <h3 class="font-semibold text-lg mt-4">
-                {{ presence.discord_user.username }}#{{ presence.discord_user.discriminator }}
+                @{{ presence.discord_user.username }}
               </h3>
               <div class="flex mt-4 justify-center items-center gap-1">
                 <svg
@@ -273,7 +273,7 @@
           </p>
           <img class="h-6 w-auto" src="~/assets/discord.svg">
           <p class="text-2xl font-semibold">
-            {{ presence.discord_user.username }}#{{ presence.discord_user.discriminator }}
+            @{{ presence.discord_user.username }}
           </p>
         </div>
       </div>
