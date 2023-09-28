@@ -1,5 +1,3 @@
-/* eslint-disable no-redeclare, brace-style */
-// eslint doesn't seem to understand function overloading!
 import { LanyardResponse } from '~~/types/lanyard'
 
 const enum Constants {
@@ -19,11 +17,13 @@ export default defineNuxtPlugin(() => {
     }
 
     // Throw error if no options are set.
-    if (!options || Object.keys(options).length === 0) { throw new Error('No options were provided.') }
+    if (!options || Object.keys(options).length === 0) {
+      throw new Error('No options were provided.')
     // Throw error if userId is missing.
-    else if (options.userId === undefined) { throw new Error('Missing `userId` option.') }
+    } else if (options.userId === undefined) {
+      throw new Error('Missing `userId` option.')
     // Use websocket if socket option is set to true.
-    else if (options.socket === true) {
+    } else if (options.socket === true) {
       const socket = new WebSocket(Constants.webSocketBase)
 
       let key = 'subscribe_to_id'
@@ -51,17 +51,15 @@ export default defineNuxtPlugin(() => {
       })
 
       return socket
-    }
     // Send a single request if userId is a string
-    else if (typeof options.userId === 'string') {
+    } else if (typeof options.userId === 'string') {
       const data = await fetch(`${Constants.apiBase}/users/${options.userId}`).then(res =>
         res.json()
       )
 
       return data
-    }
     // Send multiple request if userId is a string
-    else if (typeof options.userId === 'object') {
+    } else if (typeof options.userId === 'object') {
       const responseArray = []
 
       for (const user of options.userId) {
@@ -74,6 +72,8 @@ export default defineNuxtPlugin(() => {
 
       return responseArray
     }
+
+    throw new Error('Unreachable')
   }
 
   return {
