@@ -16,7 +16,7 @@
     "eslint-plugin-vue": "9.17.0",
     "nuxt": "3.7.4",
     "three": "0.140.0",
-    "typescript": "5.2.2",
+    "typescript": "5.5.3",
     "vite-plugin-eslint": "1.8.1"
   }
 }
