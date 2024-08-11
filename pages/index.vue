@@ -11,7 +11,7 @@
               I'm <span class="text-theme-yellow text-7xl">Sasial</span>
             </h1>
             <h3 class="text-3xl mt-6">
-              A Fullstack &amp; Game Developer, with more than 4 years experience
+              A Fullstack &amp; Game Developer, with more than 6 years experience
             </h3>
           </div>
           <div>
@@ -189,10 +189,11 @@
           <p class="text-2xl mt-5">
             I am currently
             <span v-if="presence.kv.commissions === 'true'" class="text-green-300 font-bold">
-              open for comissions</span><span v-if="presence.kv.commissions === 'false'" class="text-red-500 font-bold">
-              unable to handle any more comissions</span>. My timezone is GMT+10, so you may get replies from me at strange times. While I endavour to
+              open for <span class="underline">smaller</span> comissions (e.g. - <span class="underline">not</span> a job offer)</span><span v-if="presence.kv.commissions === 'false'" class="text-red-500 font-bold">
+              unable to handle any more comissions at this time</span>. My timezone is GMT+10, so you may get replies from me at strange times. While I endavour to
             reply as soon as possible, it is helpful if you can tell me your timezone so I can reply when
             we're both online.
+            <br><br>This portfolio is currently <span class="underline">out of date</span> and will be redone at some point in the future. Please contact me if you want a more up to date portfolio/information.
           </p>
           <div class="mt-8 flex flex-wrap gap-5 justify-center sm:justify-start items-center">
             <div
