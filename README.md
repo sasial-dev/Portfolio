@@ -1,36 +1,25 @@
 ## Setup
 
-Make sure to install the dependencies:
+Make sure to install dependencies:
 
 ```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
+bun install
 ```
 
 ## Development Server
 
-Start the development server on http://localhost:3000
+Start the development server on `http://localhost:3000`:
 
 ```bash
+# npm
 npm run dev
-```
 
-## Production
+# pnpm
+pnpm dev
 
-Build the application for production:
+# yarn
+yarn dev
 
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
+# bun
+bun run dev
 ```
